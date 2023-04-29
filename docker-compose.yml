@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://SolidSnake:YizuPZw06AwI2N5E@cluster0.gumn2uq.mongodb.net
+      - SPRING_DATA_MONGODB_DATABASE=wine-api-db
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
