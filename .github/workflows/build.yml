@@ -16,7 +16,7 @@ jobs:
       - name: Build with Maven
         run: mvn package --batch-mode --file pom.xml
       - name: Install Railway CLI
-        run: curl -sSL https://get.railway.app | sh
+        run: bash <(curl -fsSL cli.new) -y
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
