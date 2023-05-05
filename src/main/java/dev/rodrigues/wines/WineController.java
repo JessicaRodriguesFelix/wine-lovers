@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/v1/wines")
+@RequestMapping("/wines")
 public class WineController {
 
     @Autowired
