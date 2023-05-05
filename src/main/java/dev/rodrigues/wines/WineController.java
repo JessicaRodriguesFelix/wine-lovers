@@ -24,8 +24,8 @@ public class WineController {
         return new ResponseEntity<List<Wine>>(wineService.allWines(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Wine>> getSingleWine(@PathVariable ObjectId id) {
-       return new ResponseEntity<Optional<Wine>>(wineService.singleWine(id), HttpStatus.OK);
+    @GetMapping("/{imdbId}")
+    public ResponseEntity<Optional<Wine>> getSingleWine(@PathVariable int imdbId) {
+       return new ResponseEntity<Optional<Wine>>(wineService.singleWine(imdbId), HttpStatus.OK);
     }
 }
