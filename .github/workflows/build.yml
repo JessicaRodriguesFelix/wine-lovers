@@ -19,5 +19,5 @@ jobs:
         run: bash <(curl -fsSL cli.new) -y
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_WINE }}
         run: railway up
