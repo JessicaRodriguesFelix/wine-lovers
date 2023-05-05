@@ -1,6 +1,5 @@
 package dev.rodrigues.wines;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +24,7 @@ public class WineController {
     }
 
     @GetMapping("/{imdbId}")
-    public ResponseEntity<Optional<Wine>> getSingleWine(@PathVariable int imdbId) {
+    public ResponseEntity<Optional<Wine>> getSingleWine(@PathVariable String imdbId) {
        return new ResponseEntity<Optional<Wine>>(wineService.singleWine(imdbId), HttpStatus.OK);
     }
 }

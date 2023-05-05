@@ -14,7 +14,7 @@ public class WineService {
     public List<Wine> allWines(){
        return wineRepository.findAll();
     }
-    public Optional<Wine> singleWine(int imdbId) {
+    public Optional<Wine> singleWine(String imdbId) {
         return wineRepository.findWineByImdbId(imdbId);
     }
 }
