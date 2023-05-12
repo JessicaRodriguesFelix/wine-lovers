@@ -26,6 +26,18 @@ The JSON schema below represents a data schema for the collection of "wines" in 
 
 ![image](https://github.com/JessicaRodriguesFelix/wine-lovers/assets/40796998/60bf6fbc-ad5f-4c56-9c87-84da70cd573f)
 
+## Wines Endpoint:
+
+The wines endpoint is available in the API and can be used to retrieve information about wines stored in the MongoDB database. Specifically, the endpoint supports two operations:
+
+**GET /wines**: Retrieves a list of all the wines stored in the database.
+**GET /wines/{id}**: Retrieves information about a specific wine stored in the database, identified by its imdbId.
+
+## Reviews Endpoint:
+The reviews endpoint is available in the API and can be used to save user comments regarding specific entries in the database. Specifically, the endpoint supports one operation:
+
+**POST /reviews**: Saves a new review to the database for the wine with the given imdbId.
+
 ## CI/CD Pipeline and Deployment
 
 In this repository, I am using GitHub Actions to implement a continuous integration and continuous delivery (CI/CD) pipeline for my application. 
