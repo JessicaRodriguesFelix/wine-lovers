@@ -8,11 +8,33 @@ Crush Club is a web application built with Spring Boot 3.0.5 using Maven and Jav
 
 The main objective of the initial MVP was to establish a backend framework that enables users to perform essential database operations, such as retrieving all entries, fetching a specific entry, and adding new entries.
 
-## More information about the back-end tech stack
+## More information about Tech Stack
 Java Spring Boot is an open-source tool that makes it easier to use Java-based frameworks to create microservices and web apps. 
 
 MongoDB is a cross-platform, document oriented database that provides, high performance, high availability, and easy scalability. 
 It is a non-relational document database that provides support for JSON-like storage and works on concept of collection and document. 
+
+## JSON Document for MongoDB
+The JSON schema below represents a data schema for the collection of "wines" in the MongoDB that represents a collection of wine objects for storing and querying information about different wines and their associated wineries, regions, and images, as well as for tracking reviews and other related information:
+
+* winery: A string representing the name of the winery.
+* wine: A string representing the name of the wine.
+* location: A string representing the location of the winery, with a format of "country\n·\nregion".
+* image: A string representing the URL of an image of the wine.
+* imdbId: A string identifier for the wine object.
+* reviewIds: An array of numerical identifiers representing the IDs of reviews associated with the wine object.
+
+![image](https://github.com/JessicaRodriguesFelix/wine-lovers/assets/40796998/60bf6fbc-ad5f-4c56-9c87-84da70cd573f)
+
+## CI/CD Pipeline and Deployment
+
+In this repository, I am using GitHub Actions to implement a continuous integration and continuous delivery (CI/CD) pipeline for my application. 
+
+GitHub Actions provides an easy-to-use and powerful platform for automating build, test, and deployment processes directly from my repository, with customizable workflows that can be triggered on events like code pushes, pull requests, or scheduled intervals.
+
+To deploy my application, I am using Railways, a modern platform for hosting and managing web applications in the cloud. 
+
+Together, GitHub Actions and Railways enable me to streamline my development and deployment process, reduce manual errors, and ensure consistent and reliable performance of my application.
 
 ### Author
 👤 Jessica Rodrigues-Dlouhy
