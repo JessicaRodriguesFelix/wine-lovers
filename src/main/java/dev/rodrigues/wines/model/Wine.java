@@ -1,6 +1,5 @@
 package dev.rodrigues.wines.model;
 
-import dev.rodrigues.wines.model.Review;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,4 +25,12 @@ public class Wine {
     private String imdbId;
     @DocumentReference
     private List<Review> reviewIds;
+
+    public Wine(String winery, String wine, String location, String image, String imdbId) {
+        this.winery = winery;
+        this.wine = wine;
+        this.location = location;
+        this.image = image;
+        this.imdbId = imdbId;
+    }
 }

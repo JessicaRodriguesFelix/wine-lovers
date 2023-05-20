@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -18,12 +17,17 @@ public class WineController {
 
     @GetMapping
     public ResponseEntity<List<Wine>> getAllWines() {
-        return new ResponseEntity<List<Wine>>(wineService.allWines(), HttpStatus.OK);
+        return new ResponseEntity<>(wineService.allWines(), HttpStatus.OK);
     }
 
     @GetMapping("/{imdbId}")
     public ResponseEntity<ResponseEntity<String>> getSingleWine(@PathVariable String imdbId) {
        return ResponseEntity.ok(wineService.singleWine(imdbId));
+    }
+
+    @PostMapping
+    public Wine saveWine(@RequestBody Wine wine) {
+        return wineService.createWine(wine.getWinery(),wine.getWine(),wine.getLocation(),wine.getImage(),wine.getImdbId());
     }
 
     @DeleteMapping("/{imdbId}")

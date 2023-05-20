@@ -5,6 +5,7 @@ import dev.rodrigues.wines.repository.WineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,12 @@ public class WineService {
        else {
          return ResponseEntity.notFound().build();
         }
+    }
+    
+    public Wine createWine(String winery, String wine, String location, String image, String imdbId) {
+        Wine wineObject = new Wine(winery, wine, location, image,imdbId);
+        Wine createdWine = wineRepository.insert(wineObject);
+        return createdWine;
     }
     public ResponseEntity<String> deleteWine(String imdbId) {
         wineRepository.deleteByImdbId(imdbId);
